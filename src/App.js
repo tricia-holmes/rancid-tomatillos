@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import Banner from "./Banner/Banner";
 
 class App extends React.Component {
   constructor() {
@@ -8,6 +9,7 @@ class App extends React.Component {
     this.state = {
       movies: [],
       currentMovie: {},
+      banner: {},
     };
   }
 
@@ -16,15 +18,22 @@ class App extends React.Component {
       .then((resp) => resp.json())
       .then((data) => {
         this.setState({ movies: data.movies });
+        this.setState({ banner: this.randomMovie() });
       });
+  }
+
+  randomMovie() {
+    return this.state.movies[
+      Math.floor(Math.random()) * this.state.movies.length
+    ];
   }
 
   render() {
     return (
       <main>
         <h1>Racid Tomatillos</h1>
-        {/* <Banner />
-        <Movies />
+        <Banner banner={this.state.banner} />
+        {/*<Movies />
         {this.state.currentMovie && <MovieDetails />} */}
       </main>
     );

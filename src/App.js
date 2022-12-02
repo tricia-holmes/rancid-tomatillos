@@ -3,12 +3,13 @@ import "./App.css";
 import React from "react";
 import Banner from "./Banner/Banner";
 import Movies from "./Movies/Movies";
+import movieData from "./MovieData";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
+      movies: movieData,
       currentMovie: {},
       loading: false,
     };
@@ -16,12 +17,13 @@ class App extends React.Component {
 
   componentDidMount() {
     this.setState({ loading: true });
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then((resp) => resp.json())
-      .then((data) => {
-        this.setState({ movies: data.movies });
-        this.setState({ loading: false });
-      });
+    // fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+    //   .then((resp) => resp.json())
+    //   .then((data) => {
+    //     this.setState({ movies: data.movies });
+    //     this.setState({ loading: false });
+    //   });
+    this.setState({ loading: false });
   }
 
   randomMovie(array) {
@@ -33,7 +35,7 @@ class App extends React.Component {
     const displayContent = (
       <div className="bannerImages">
         <Banner movies={this.state.movies} />
-        <Movies />
+        <Movies movies={this.state.movies} />
       </div>
     );
 

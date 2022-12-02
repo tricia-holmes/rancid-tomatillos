@@ -1,9 +1,24 @@
 import React from "react";
+import "./Banner.css";
 
-const Banner = ({ banner }) => {
-  return (
-    <img src={`${banner.backdrop_path}`} alt={`image from ${banner.title}`} />
-  );
-};
+class Banner extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      banner:
+        "https://image.tmdb.org/t/p/original//qsxhnirlp7y4Ae9bd11oYJSX59j.jpg",
+    };
+  }
+
+  render() {
+    return (
+      <img
+        className="banner"
+        src={this.state.banner}
+        alt={`image from ${this.state.banner.title}`}
+      />
+    );
+  }
+}
 
 export default Banner;

@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
 import Banner from "./Banner/Banner";
+import Movies from "./Movies/Movies";
 
 class App extends React.Component {
   constructor() {
@@ -9,32 +10,38 @@ class App extends React.Component {
     this.state = {
       movies: [],
       currentMovie: {},
-      banner: {},
+      loading: false,
     };
   }
 
   componentDidMount() {
+    this.setState({ loading: true });
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then((resp) => resp.json())
       .then((data) => {
         this.setState({ movies: data.movies });
-        this.setState({ banner: this.randomMovie() });
+        this.setState({ loading: false });
       });
   }
 
-  randomMovie() {
-    return this.state.movies[
-      Math.floor(Math.random()) * this.state.movies.length
-    ];
+  randomMovie(array) {
+    return Math.floor(Math.random() * array.length);
   }
 
   render() {
+    const loading = <h2>Loading...</h2>;
+    const displayContent = (
+      <div className="bannerImages">
+        <Banner movies={this.state.movies} />
+        <Movies />
+      </div>
+    );
+
     return (
       <main>
         <h1>Racid Tomatillos</h1>
-        <Banner banner={this.state.banner} />
-        {/*<Movies />
-        {this.state.currentMovie && <MovieDetails />} */}
+        {this.state.loading ? loading : displayContent}
+        {/* {this.state.currentMovie && <MovieDetails />} */}
       </main>
     );
   }

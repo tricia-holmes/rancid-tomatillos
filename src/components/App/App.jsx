@@ -1,8 +1,8 @@
 import './App.css'
 import React from 'react'
-import Banner from './Banner/Banner'
-import Movies from './Movies/Movies'
-import MovieDetails from './MovieDetails/MovieDetails'
+import Banner from '../Banner/Banner'
+import Movies from '../Movies/Movies'
+import MovieDetails from '../MovieDetails/MovieDetails'
 
 class App extends React.Component {
   constructor() {

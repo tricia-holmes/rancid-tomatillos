@@ -4,12 +4,13 @@ import React from "react";
 import Banner from "./Banner/Banner";
 import Movies from "./Movies/Movies";
 import movieData from "./MovieData";
+import MovieDetails from "./MovieDetails/MovieDetails";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData,
+      movies: movieData.movies,
       currentMovie: {},
       loading: false,
     };
@@ -30,12 +31,19 @@ class App extends React.Component {
     return Math.floor(Math.random() * array.length);
   }
 
+  handleClick = (event) => {
+    const movieFound = this.state.movies.find(
+      (item) => `${item.id}` === event.target.id
+    );
+    this.setState({ currentMovie: movieFound });
+  };
+
   render() {
     const loading = <h2>Loading...</h2>;
     const displayContent = (
       <div className="bannerImages">
         <Banner movies={this.state.movies} />
-        <Movies movies={this.state.movies} />
+        <Movies movies={this.state.movies} handleClick={this.handleClick} />
       </div>
     );
 
@@ -43,7 +51,7 @@ class App extends React.Component {
       <main>
         <h1>Racid Tomatillos</h1>
         {this.state.loading ? loading : displayContent}
-        {/* {this.state.currentMovie && <MovieDetails />} */}
+        {this.state.currentMovie && <MovieDetails />}
       </main>
     );
   }

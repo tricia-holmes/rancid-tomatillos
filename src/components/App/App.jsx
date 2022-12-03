@@ -34,7 +34,7 @@ class App extends React.Component {
     const loading = <h2 style={{ color: 'white' }}>Loading...</h2>
     const displayContent = (
       <div className="bannerImages">
-        <Banner movies={this.state.movies} randomMovie={this.randomMovie} />
+        <Banner movies={this.state.movies}/>
         <Movies movies={this.state.movies} handleClick={this.handleClick} />
       </div>
     )

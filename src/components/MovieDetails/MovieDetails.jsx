@@ -3,7 +3,7 @@ import './MovieDetails.css'
 
 const MovieDetails = ({ currentMovie }) => {
   return (
-    <div className="movieDetailsModal">
+    <div className="movieDetailsModal" style={{backgroundImage: `url(${currentMovie['backdrop_path']})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
       <div className="movieDetailsContent">
         <img className='movieDetailsPoster' src={`${currentMovie['poster_path']}`} alt="" />
         <h1 className='movieDetailsTitle'>{currentMovie.title}</h1>

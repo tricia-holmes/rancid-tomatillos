@@ -26,6 +26,34 @@
   height: 90vh;
 }
 
+.movieDetailsBtnContainer {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  width: 100%;
+  bottom: 56px;
+}
+
+.movieDetailsCloseBtn {
+  display: flex;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 4px;
+  font-size: 18px;
+  color: lightslategray;
+  background-color: black;
+  outline: none;
+  width: 75px;
+  height: 25px;
+  bottom: 50px;
+  left: 280px;
+  margin-right: 10px;
+}
+
+.movieDetailsCloseBtn:hover {
+  color: white;
+}
+
 .movieDetailsTitle {
   display: flex;
   color: rgb(247, 82, 82);

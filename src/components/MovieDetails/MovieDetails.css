@@ -28,10 +28,11 @@
 
 .movieDetailsBtnContainer {
   display: flex;
-  position: relative;
+  position: absolute;
   justify-content: flex-end;
+  align-content: center;
   width: 100%;
-  bottom: 56px;
+  top: 14px;
 }
 
 .movieDetailsCloseBtn {

@@ -30,6 +30,10 @@ class App extends React.Component {
     this.setState({ currentMovie: movieFound })
   }
 
+  closeModal = () => {
+    this.setState({currentMovie: {}})
+  }
+
   render() {
     const loading = <h2 style={{ color: 'white' }}>Loading...</h2>
     const displayContent = (
@@ -43,7 +47,7 @@ class App extends React.Component {
       <main>
         <h1>Rancid Tomatillos</h1>
         {this.state.loading ? loading : displayContent}
-        {this.state.currentMovie.id && <MovieDetails currentMovie={this.state.currentMovie}/>}
+        {this.state.currentMovie.id && <MovieDetails currentMovie={this.state.currentMovie} closeModal={this.closeModal}/>}
       </main>
     )
   }

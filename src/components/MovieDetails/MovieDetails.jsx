@@ -1,10 +1,13 @@
 import React from 'react'
 import './MovieDetails.css'
 
-const MovieDetails = ({ currentMovie }) => {
+const MovieDetails = ({ currentMovie, closeModal }) => {
   return (
     <div className="movieDetailsModal" style={{backgroundImage: `url(${currentMovie['backdrop_path']})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
       <div className="movieDetailsContent">
+        <div className="movieDetailsBtnContainer">
+        <button className="movieDetailsCloseBtn" onClick={closeModal}>Back</button>
+        </div>
         <img className='movieDetailsPoster' src={`${currentMovie['poster_path']}`} alt="" />
         <h1 className='movieDetailsTitle'>{currentMovie.title}</h1>
         <div className='movieDetailsInfo'>

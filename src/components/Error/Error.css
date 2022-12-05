@@ -1,0 +1,19 @@
+.errorMessage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.errorMessageText {
+  color: rgb(255, 241, 137);
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.errorMessageGif {
+  margin-top: 10px;
+  height: 65vh;
+}

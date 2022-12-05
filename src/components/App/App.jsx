@@ -1,8 +1,9 @@
 import './App.css'
-import React, {PureComponent} from 'react'
+import React from 'react'
 import Banner from '../Banner/Banner'
 import Movies from '../Movies/Movies'
 import MovieDetails from '../MovieDetails/MovieDetails'
+import Error from '../Error/Error'
 
 class App extends React.Component {
   constructor() {
@@ -11,16 +12,26 @@ class App extends React.Component {
       movies: [],
       currentMovie: {},
       loading: true,
+      hasError: false,
     }
   }
 
-  componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then((resp) => resp.json())
-      .then((data) => {
-        this.setState({ movies: data.movies })
-        this.setState({ loading: false })
-      })
+  async componentDidMount() {
+    try {
+      let response = await fetch(
+        'https://rancid-tomatillos.herokuapp.com/api/v2/movies'
+      )
+      if (!response.ok) {
+        throw new Error('weird error')
+      }
+      let data = await response.json()
+      this.setState({ movies: data.movies })
+      this.setState({ loading: false })
+    } 
+    catch (e) {
+      this.setState({ loading: false })
+      this.setState({ hasError: true })
+    }
   }
 
   handleClick = (event) => {
@@ -31,23 +42,36 @@ class App extends React.Component {
   }
 
   closeModal = () => {
-    this.setState({currentMovie: {}})
+    this.setState({ currentMovie: {} })
   }
 
   render() {
     const loading = <h2 style={{ color: 'white' }}>Loading...</h2>
+    
     const displayContent = (
       <div className="bannerImages">
-        <Banner movies={this.state.movies}/>
+        <Banner movies={this.state.movies} />
         <Movies movies={this.state.movies} handleClick={this.handleClick} />
       </div>
     )
+    
+    const shouldLoad = () => {
+      if (!this.state.hasError) {
+        return displayContent
+      }
+    }
 
     return (
       <main>
         <h1>Rancid Tomatillos</h1>
-        {this.state.loading ? loading : displayContent}
-        {this.state.currentMovie.id && <MovieDetails currentMovie={this.state.currentMovie} closeModal={this.closeModal}/>}
+        {this.state.hasError && <Error />}
+        {this.state.loading ? loading : shouldLoad()}
+        {this.state.currentMovie.id && (
+          <MovieDetails
+            currentMovie={this.state.currentMovie}
+            closeModal={this.closeModal}
+          />
+        )}
       </main>
     )
   }

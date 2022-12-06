@@ -6,7 +6,7 @@ describe('empty spec', () => {
     cy.contains('Rancid Tomatillos')
   })
 
-  it.skip('should display a banner image.', () => {
+  it('should display a banner image.', () => {
     cy.get('.bannerImages')
       .find('img')
         .should('have.class', 'banner')
@@ -26,5 +26,22 @@ describe('empty spec', () => {
       .find('img[id="425001"]')
         .should('have.class', 'movieThumbnail')
         .should('have.attr', 'src', "https://image.tmdb.org/t/p/original//yUFbPtWeDbVR3zmqshOaL5lScyo.jpg")
+  })
+
+  it('should show additional details about movie when clicked', () => {
+    cy.get('.bannerImages').get('div')
+      .get('img[id="539885"]').click()
+    // add content tests after router implementation
+
+  })
+
+  it('should display an error message when an error is present', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 500
+    })
+    cy.get('.errorMessage')
+      .contains('Oh no! Something went wrong. Please try later!')
+      .get('img')
+        .should('have.attr', 'src', '/static/media/sad-pikachu.3cab20930a1dee5ea60d.gif')
   })
 })

@@ -1,6 +1,7 @@
 import React from "react";
 import Movie from "../Movie/Movie";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Movies = ({ movies }) => {
   const displayMovies = movies.map((item) => {
@@ -14,3 +15,7 @@ const Movies = ({ movies }) => {
 };
 
 export default Movies;
+
+Movies.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

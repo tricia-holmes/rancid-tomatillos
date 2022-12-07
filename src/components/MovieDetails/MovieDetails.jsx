@@ -1,6 +1,7 @@
 import React from "react";
 import "./MovieDetails.css";
 import { Link } from "react-router-dom";
+import { number, shape, string } from "prop-types";
 
 const MovieDetails = ({ selectedMovie }) => {
   return (
@@ -37,3 +38,14 @@ const MovieDetails = ({ selectedMovie }) => {
 };
 
 export default MovieDetails;
+
+MovieDetails.propTypes = {
+  selectedMovie: shape({
+    id: number.isRequired,
+    poster_path: string.isRequired,
+    backdrop_path: string.isRequired,
+    title: string.isRequired,
+    average_rating: number.isRequired,
+    release_date: string.isRequired,
+  }).isRequired,
+};

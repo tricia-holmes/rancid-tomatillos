@@ -71,9 +71,6 @@ class App extends React.Component {
             const foundMovie = this.state.movies.find(
               (item) => `${item.id}` === match.params.id
             );
-            console.log("MATCH PARAMS MOVIE", match);
-            console.log("STATE", this.state.movies);
-            console.log("FOUND MOVIE", foundMovie);
             return <MovieDetails selectedMovie={foundMovie} />;
           }}
         />

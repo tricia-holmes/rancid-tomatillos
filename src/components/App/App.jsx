@@ -41,9 +41,9 @@ class App extends React.Component {
     this.setState({ currentMovie: movieFound });
   };
 
-  closeModal = () => {
-    this.setState({ currentMovie: {} });
-  };
+  // closeModal = () => {
+  //   this.setState({ currentMovie: {} });
+  // };
 
   render() {
     const loading = <h2 style={{ color: "white" }}>Loading...</h2>;
@@ -81,12 +81,10 @@ class App extends React.Component {
           render={() => {
             return (
               <div>
-                {this.state.currentMovie.id && (
-                  <MovieDetails
-                    currentMovie={this.state.currentMovie}
-                    closeModal={this.closeModal}
-                  />
-                )}
+                <MovieDetails
+                  currentMovie={this.state.currentMovie}
+                  // closeModal={this.closeModal}
+                />
               </div>
             );
           }}

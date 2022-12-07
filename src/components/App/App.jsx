@@ -35,8 +35,11 @@ class App extends React.Component {
   }
 
   handleClick = (event) => {
+    console.log(event);
     const movieFound = this.state.movies.find(
-      (item) => `${item.id}` === event.target.id
+      (item) =>
+        `${item.id}` === event.target.id ||
+        `${item.id}` === event.target.firstChild.id
     );
     this.setState({ currentMovie: movieFound });
   };
@@ -65,7 +68,7 @@ class App extends React.Component {
           render={() => {
             return (
               <div>
-                <h1>Rancid Tomatillos</h1>
+                <h1 className="title">Rancid Tomatillos</h1>
                 {this.state.hasError && <Error />}
                 {this.state.loading ? loading : shouldLoad()}
               </div>

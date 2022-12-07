@@ -11,7 +11,6 @@ class App extends React.Component {
     super();
     this.state = {
       movies: [],
-      currentMovie: {},
       loading: true,
       hasError: false,
     };
@@ -34,23 +33,13 @@ class App extends React.Component {
     }
   }
 
-  handleClick = (event) => {
-    console.log(event);
-    const movieFound = this.state.movies.find(
-      (item) =>
-        `${item.id}` === event.target.id ||
-        `${item.id}` === event.target.firstChild.id
-    );
-    this.setState({ currentMovie: movieFound });
-  };
-
   render() {
     const loading = <h2 style={{ color: "white" }}>Loading...</h2>;
 
     const displayContent = (
       <div className="bannerImages">
         <Banner movies={this.state.movies} />
-        <Movies movies={this.state.movies} handleClick={this.handleClick} />
+        <Movies movies={this.state.movies} />
       </div>
     );
 
@@ -76,9 +65,16 @@ class App extends React.Component {
           }}
         />
         <Route
+          exact
           path="/:id"
-          render={() => {
-            return <MovieDetails currentMovie={this.state.currentMovie} />;
+          render={({ match }) => {
+            const foundMovie = this.state.movies.find(
+              (item) => `${item.id}` === match.params.id
+            );
+            console.log("MATCH PARAMS MOVIE", match);
+            console.log("STATE", this.state.movies);
+            console.log("FOUND MOVIE", foundMovie);
+            return <MovieDetails selectedMovie={foundMovie} />;
           }}
         />
       </main>

@@ -6,11 +6,18 @@ body {
   text-align: center;
 }
 
-h1 {
-  color: rgb(146, 146, 146);
+.title {
+  color: rgb(244, 244, 244);
+  font-size: 8vw;
+  font-weight: 900;
+  margin-top: 0;
   margin-left: 2%;
+  position: absolute;
+  z-index: 1;
+  text-shadow: 0vw 0vw 3vw black;
 }
 
 .bannerImages {
+  position: relative;
   width: 100vw;
 }

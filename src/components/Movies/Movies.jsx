@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Movies = ({ movies, handleClick }) => {
   const displayMovies = movies.map((item) => {
     return (
-      <Link key={item.id} to={`/movies/${item.id}`}>
+      <Link key={item.id} to={`/${item.id}`}>
         <Movie singleMovie={item} />
       </Link>
     );

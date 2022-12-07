@@ -41,10 +41,6 @@ class App extends React.Component {
     this.setState({ currentMovie: movieFound });
   };
 
-  // closeModal = () => {
-  //   this.setState({ currentMovie: {} });
-  // };
-
   render() {
     const loading = <h2 style={{ color: "white" }}>Loading...</h2>;
 
@@ -77,16 +73,9 @@ class App extends React.Component {
           }}
         />
         <Route
-          path="/movies/:id"
+          path="/:id"
           render={() => {
-            return (
-              <div>
-                <MovieDetails
-                  currentMovie={this.state.currentMovie}
-                  // closeModal={this.closeModal}
-                />
-              </div>
-            );
+            return <MovieDetails currentMovie={this.state.currentMovie} />;
           }}
         />
       </main>

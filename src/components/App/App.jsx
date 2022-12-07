@@ -64,6 +64,7 @@ class App extends React.Component {
     return (
       <main>
         <Route
+          exact
           path="/"
           render={() => {
             return (
@@ -75,12 +76,21 @@ class App extends React.Component {
             );
           }}
         />
-        {this.state.currentMovie.id && (
-          <MovieDetails
-            currentMovie={this.state.currentMovie}
-            closeModal={this.closeModal}
-          />
-        )}
+        <Route
+          path="/movies/:id"
+          render={() => {
+            return (
+              <div>
+                {this.state.currentMovie.id && (
+                  <MovieDetails
+                    currentMovie={this.state.currentMovie}
+                    closeModal={this.closeModal}
+                  />
+                )}
+              </div>
+            );
+          }}
+        />
       </main>
     );
   }

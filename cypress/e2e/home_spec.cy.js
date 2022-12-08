@@ -3,11 +3,11 @@ describe('home page testing', () => {
     cy.visit('http://localhost:3000/')
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movie_data.json' })
   })
-  it('should display a title of the application', () => {
+  it.skip('should display a title of the application', () => {
     cy.contains('Rancid Tomatillos')
   })
 
-  it('should display a banner image.', () => {
+  it.skip('should display a banner image.', () => {
     cy.get('.bannerImages')
       .find('img')
         .should('have.class', 'banner')
@@ -29,10 +29,27 @@ describe('home page testing', () => {
         .should('have.attr', 'src', "https://image.tmdb.org/t/p/original//yUFbPtWeDbVR3zmqshOaL5lScyo.jpg")
   })
 
-  it.skip('should show additional details about movie when clicked', () => {
+  it.skip('should route to the movie id url when clicked', () => {
     cy.get('.bannerImages').get('div')
       .get('img[id="539885"]').click()
-    // add content tests after router implementation
+      .url().should('include', '/539885')
+  })
 
+  it.skip('should show additional details about movie when clicked', () => {
+    cy.get('.bannerImages').get('div')
+      .get('img[id="413518"]').click()
+      .get('.movieDetailsContent')
+        .find('div')
+        .should('have.class', 'movieDetailsInfo')
+        .contains('Average Rating:')
+        .contains('Release Date:')
+  })
+
+  it('should route back to the home page when back is clicked', () => {
+    cy.get('.bannerImages').get('div')
+      .get('img[id="726739"]').click()
+      .url().should('include', '/726739')
+      .get('button').click()
+      .url().should('include', '/')
   })
 })

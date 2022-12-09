@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('Individual movie page testing', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movie_data.json' })

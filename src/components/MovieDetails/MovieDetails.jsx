@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { number, shape, string } from "prop-types";
 
 const MovieDetails = ({ selectedMovie }) => {
+  console.log(selectedMovie);
+  const genres = selectedMovie.genres.map((item) => {
+    return `${item}, `;
+  });
   return (
     <div
       className="movieDetailsModal"
@@ -25,12 +29,16 @@ const MovieDetails = ({ selectedMovie }) => {
           alt=""
         />
         <h1 className="movieDetailsTitle">{selectedMovie.title}</h1>
+        <h2>{selectedMovie.tagline}</h2>
         <div className="movieDetailsInfo">
           <p>
             Average Rating:{" "}
             {Math.round(selectedMovie["average_rating"] * 10) / 10}
           </p>
           <p>Release Date: {selectedMovie["release_date"]}</p>
+          <p>Revenue: {selectedMovie.revenue}</p>
+          <p>Genres: {genres}</p>
+          <p>Overview: {selectedMovie.overview}</p>
         </div>
       </div>
     </div>

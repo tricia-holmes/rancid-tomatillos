@@ -9,6 +9,11 @@ export const loadData = (URL, item) => {
     .then((data) => {
       item.setState({ movies: data.movies });
       item.setState({ loading: false });
+      const helperArray = [];
+      data.movies.forEach((movie) => {
+        getSingleMovie(URL, movie.id, helperArray, item);
+      });
+      item.setState({ moviesWithDetails: helperArray });
     })
     .catch((err) => {
       item.setState({ loading: false });
@@ -16,15 +21,19 @@ export const loadData = (URL, item) => {
     });
 };
 
-export const getSingleMovie = (URL, id, item) => {
+const getSingleMovie = (URL, id, array, thing) => {
   fetch(`${URL}/${id}`)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("weird error");
+        throw new Error("SINGLE ERROR");
       }
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      array.push(data.movie);
+    })
+    .catch((err) => {
+      thing.setState({ loading: false });
+      thing.setState({ hasError: true });
     });
 };

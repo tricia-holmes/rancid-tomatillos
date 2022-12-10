@@ -5,7 +5,7 @@ import Movies from "../Movies/Movies";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import Error from "../Error/Error";
 import { Route } from "react-router-dom";
-import loadData from "./Utils/ApiCalls";
+import { loadData, getSingleMovie } from "./Utils/ApiCalls";
 
 class App extends React.Component {
   constructor() {
@@ -17,9 +17,9 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     loadData("https://rancid-tomatillos.herokuapp.com/api/v2/movies", this);
-  }
+  };
 
   render() {
     const loading = <h2 style={{ color: "white" }}>Loading...</h2>;

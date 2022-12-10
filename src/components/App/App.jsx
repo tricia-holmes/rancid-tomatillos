@@ -5,7 +5,7 @@ import Movies from "../Movies/Movies";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import Error from "../Error/Error";
 import { Route } from "react-router-dom";
-import { loadData } from "../Util/ApiCalls";
+import { loadData, getSingleMovie } from "../Util/ApiCalls";
 
 class App extends React.Component {
   constructor() {
@@ -14,11 +14,16 @@ class App extends React.Component {
       movies: [],
       loading: true,
       hasError: false,
+      moviesDetails: [],
     };
   }
 
   componentDidMount = () => {
     loadData("https://rancid-tomatillos.herokuapp.com/api/v2/movies", this);
+  };
+
+  getAllMovies = (URL, id) => {
+    getSingleMovie(URL, id, this);
   };
 
   render() {
@@ -27,7 +32,7 @@ class App extends React.Component {
     const displayContent = (
       <div className="bannerImages">
         <Banner movies={this.state.movies} />
-        <Movies movies={this.state.movies} />
+        <Movies movies={this.state.movies} getAllMovies={this.getAllMovies} />
       </div>
     );
 

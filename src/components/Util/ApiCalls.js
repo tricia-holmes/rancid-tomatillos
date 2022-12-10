@@ -15,3 +15,16 @@ export const loadData = (URL, item) => {
       item.setState({ hasError: true });
     });
 };
+
+export const getSingleMovie = (URL, id, item) => {
+  fetch(`${URL}/${id}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("weird error");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+};

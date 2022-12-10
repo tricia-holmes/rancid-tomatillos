@@ -3,11 +3,11 @@ import Movie from "../Movie/Movie";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, getAllMovies }) => {
   const displayMovies = movies.map((item) => {
     return (
       <Link key={item.id} to={`/${item.id}`}>
-        <Movie singleMovie={item} />
+        <Movie singleMovie={item} getAllMovies={getAllMovies} />
       </Link>
     );
   });

@@ -5,6 +5,7 @@ import Movies from "../Movies/Movies";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import Error from "../Error/Error";
 import { Route } from "react-router-dom";
+import { loadData } from "../Util/ApiCalls";
 
 class App extends React.Component {
   constructor() {
@@ -16,22 +17,9 @@ class App extends React.Component {
     };
   }
 
-  async componentDidMount() {
-    try {
-      let response = await fetch(
-        "https://rancid-tomatillos.herokuapp.com/api/v2/movies"
-      );
-      if (!response.ok) {
-        throw new Error("weird error");
-      }
-      let data = await response.json();
-      this.setState({ movies: data.movies });
-      this.setState({ loading: false });
-    } catch (e) {
-      this.setState({ loading: false });
-      this.setState({ hasError: true });
-    }
-  }
+  componentDidMount = () => {
+    loadData("https://rancid-tomatillos.herokuapp.com/api/v2/movies", this);
+  };
 
   render() {
     const loading = <h2 style={{ color: "white" }}>Loading...</h2>;

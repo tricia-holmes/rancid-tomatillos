@@ -29,16 +29,18 @@ const MovieDetails = ({ selectedMovie }) => {
           alt=""
         />
         <h1 className="movieDetailsTitle">{selectedMovie.title}</h1>
-        <h2>{selectedMovie.tagline}</h2>
+        <h2 className="movieDetailsTagline">"{selectedMovie.tagline}"</h2>
+        <h3 className="movieDetailsOverview">
+          Overview: {selectedMovie.overview}
+        </h3>
         <div className="movieDetailsInfo">
           <p>
-            Average Rating:{" "}
+            - Average Rating:{" "}
             {Math.round(selectedMovie["average_rating"] * 10) / 10}
           </p>
-          <p>Release Date: {selectedMovie["release_date"]}</p>
-          <p>Revenue: {selectedMovie.revenue}</p>
-          <p>Genres: {genres}</p>
-          <p>Overview: {selectedMovie.overview}</p>
+          <p>- Release Date: {selectedMovie["release_date"]}</p>
+          <p>- Revenue: {selectedMovie.revenue}</p>
+          <p>- Genres: {genres}</p>
         </div>
       </div>
     </div>

@@ -13,13 +13,48 @@ class App extends React.Component {
     this.state = {
       movies: [],
       moviesWithDetails: [],
+      filteredMovies: [],
       loading: true,
       hasError: false,
+      search: "",
     };
   }
 
   componentDidMount = () => {
     loadData("https://rancid-tomatillos.herokuapp.com/api/v2/movies", this);
+  };
+
+  handleSearch = (event) => {
+    this.setState({ search: event.target.value });
+    this.searchMovies();
+    if (event.target.value === "") {
+      this.setState({ filteredMovies: [...this.state.movies] });
+    }
+  };
+
+  searchMovies = () => {
+    const foundMovies = this.state.moviesWithDetails.reduce((acc, movie) => {
+      if (movie.title) {
+        if (
+          `${movie.title}`
+            .toLowerCase()
+            .includes(`${this.state.search.toLowerCase()}`)
+        ) {
+          acc.push(movie);
+        }
+      }
+      if (movie.genres) {
+        movie.genres.forEach((item) => {
+          if (item.toLowerCase().includes(this.state.search.toLowerCase())) {
+            console.log(movie);
+            acc.push(movie);
+          }
+        });
+      }
+
+      return acc.filter((item, index) => acc.indexOf(item) === index);
+    }, []);
+    this.setState({ filteredMovies: foundMovies });
   };
 
   render() {
@@ -28,7 +63,7 @@ class App extends React.Component {
     const displayContent = (
       <div className="bannerImages">
         <Banner movies={this.state.movies} />
-        <Movies movies={this.state.movies} />
+        <Movies movies={this.state.filteredMovies} />
       </div>
     );
 
@@ -40,13 +75,24 @@ class App extends React.Component {
 
     return (
       <main>
+        {!this.state.hasError && (
+          <nav className="navigation">
+            <input
+              type="text"
+              placeholder="Search by title or genre..."
+              onChange={(event) => this.handleSearch(event)}
+            />
+          </nav>
+        )}
         <Route
           exact
           path="/"
           render={() => {
             return (
               <div>
-                <h1 className="title">Rancid Tomatillos</h1>
+                {!this.state.hasError && (
+                  <h1 className="title">Rancid Tomatillos</h1>
+                )}
                 {this.state.hasError && <Error />}
                 {this.state.loading ? loading : shouldLoad()}
               </div>

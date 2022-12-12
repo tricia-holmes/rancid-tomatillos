@@ -1,5 +1,11 @@
 body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: black;
+  color: white;
+  box-sizing: border-box;
 }
 
 .App {
@@ -16,7 +22,6 @@ body {
   z-index: 1;
   text-shadow: 0vw 0vw 3vw black;
 }
-
 input {
   margin-right: 0.5%;
   font-size: 1vw;

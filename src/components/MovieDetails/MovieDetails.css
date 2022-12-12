@@ -1,84 +1,111 @@
-.movieDetailsModal {
+.movieDetails__modal {
   display: block;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
   width: 100%;
   height: 100%;
   z-index: 1;
   color: white;
 }
 
-.movieDetailsContent {
+.movieDetails__content {
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
   justify-content: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #000000;
-  width: 70vh;
-  height: 92vh;
-  box-shadow: 1px 1px 10px 5px rgba(255, 255, 255, 0.423);
+  top: 5%;
+  margin-left: 2%;
+  width: 60vw;
+  height: 96vh;
 }
 
-.movieDetailsBtnContainer {
+.movieDetails__overlay {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.95) 40%,
+    rgba(0, 0, 0, 0.41082370448179273) 71%
+  );
+}
+
+.movieDetails__btnContainer {
   display: flex;
   position: absolute;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-content: center;
   width: 100%;
-  top: 14px;
+  top: -3%;
+  left: 2%;
 }
 
-.movieDetailsCloseBtn {
+.movieDetails__btn {
   display: flex;
   cursor: pointer;
   border: none;
   letter-spacing: 4px;
   font-size: 18px;
-  color: lightslategray;
-  background-color: black;
+  color: white;
+  background-color: transparent;
   outline: none;
-  width: 75px;
+  width: 175px;
   height: 25px;
   bottom: 50px;
   left: 280px;
   margin-right: 10px;
 }
 
-.movieDetailsCloseBtn:hover {
+.movieDetails__btn:hover {
   color: white;
 }
 
-.movieDetailsTitle {
-  margin: 0;
-  font-weight: 900;
+.movieDetails__header {
   display: flex;
-  color: rgb(255, 208, 0);
+  /* position: relative; */
+  align-items: center;
+  margin-bottom: 5vh;
 }
 
-.movieDetailsTagline {
+.movieDetails__headlines {
+  height: 35vh;
+  width: 55vh;
+  /* width: auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.movieDetails__title {
+  margin: 0;
+  font-size: calc(33px + 0.390625vw);
+  /* text-align: center; */
+}
+
+.movieDetails__tagline {
   font-size: 2vw;
   font-style: italic;
+  text-align: center;
 }
 
-.movieDetailsOverview {
+.movieDetails__overview {
   font-size: 1.5vw;
   margin: 2%;
-  margin-left: 6%;
+  margin-bottom: 5%;
+  margin-left: 14%;
 }
 
-.movieDetailsPoster {
-  height: 50vh;
+.movieDetails__poster {
+  height: 40vh;
+  margin-right: 2vw;
 }
 
-.movieDetailsInfo {
+.movieDetails__info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 5%;
@@ -87,4 +114,8 @@
 
 p {
   margin: 1%;
+}
+
+a {
+  text-decoration: none;
 }

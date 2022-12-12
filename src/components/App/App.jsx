@@ -62,6 +62,16 @@ class App extends React.Component {
 
     const displayContent = (
       <div className="bannerImages">
+        {!this.state.hasError && (
+          <nav className="navigation">
+            <input
+              type="text"
+              placeholder="Search by title or genre..."
+              onChange={(event) => this.handleSearch(event)}
+              value={this.state.search}
+            />
+          </nav>
+        )}
         <Banner movies={this.state.movies} />
         <Movies movies={this.state.filteredMovies} />
       </div>
@@ -75,15 +85,6 @@ class App extends React.Component {
 
     return (
       <main>
-        {!this.state.hasError && (
-          <nav className="navigation">
-            <input
-              type="text"
-              placeholder="Search by title or genre..."
-              onChange={(event) => this.handleSearch(event)}
-            />
-          </nav>
-        )}
         <Route
           exact
           path="/"

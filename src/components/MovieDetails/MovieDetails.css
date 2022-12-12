@@ -18,8 +18,8 @@
   align-items: center;
   justify-content: center;
   top: 5%;
-   /* left: 5%; */
-  margin-left: 2%; 
+  /* left: 5%; */
+  margin-left: 2%;
   width: 60vw;
   height: 96vh;
 }
@@ -51,7 +51,7 @@
   letter-spacing: 4px;
   font-size: 18px;
   color: white;
-  background-color: black;
+  background-color: transparent;
   outline: none;
   width: 175px;
   height: 25px;

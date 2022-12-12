@@ -10,7 +10,7 @@ body {
   color: rgb(244, 244, 244);
   font-size: 8vw;
   font-weight: 900;
-  margin-top: 0;
+  margin-top: 0.1%;
   margin-left: 2%;
   position: absolute;
   z-index: 1;
@@ -20,4 +20,29 @@ body {
 .bannerImages {
   position: relative;
   width: 100vw;
+}
+
+.navigation {
+  margin: 1%;
+  margin-left: -2%;
+  display: flex;
+  width: 100vw;
+  justify-content: flex-end;
+  position: absolute;
+  z-index: 2;
+}
+
+input {
+  margin-right: 0.5%;
+  font-size: 1vw;
+  width: 12vw;
+  height: auto;
+}
+
+button {
+  font-size: 1vw;
+}
+
+button:hover {
+  cursor: pointer;
 }

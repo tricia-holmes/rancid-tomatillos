@@ -8,6 +8,7 @@ export const loadData = (URL, item) => {
     })
     .then((data) => {
       item.setState({ movies: data.movies });
+      item.setState({ filteredMovies: data.movies });
       item.setState({ loading: false });
       const helperArray = [];
       data.movies.forEach((movie) => {

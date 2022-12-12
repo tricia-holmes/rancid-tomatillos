@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { number, shape, string } from "prop-types";
 
 const MovieDetails = ({ selectedMovie }) => {
-  console.log(!!selectedMovie.tagline);
   const genres = selectedMovie.genres.map((item) => {
     return `${item}, `;
   });

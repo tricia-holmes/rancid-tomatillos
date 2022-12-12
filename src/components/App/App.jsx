@@ -1,13 +1,10 @@
 import "./App.css";
 import React from "react";
-import Banner from "../Banner/Banner";
-import Movies from "../Movies/Movies";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import Error from "../Error/Error";
 import Loader from "../Loader/Loader";
 import { Route } from "react-router-dom";
 import { loadData } from "../Util/ApiCalls";
-import SearchBar from "../SearchBar/SearchBar";
 import Home from "../Home/Home";
 
 class App extends React.Component {
@@ -59,19 +56,6 @@ class App extends React.Component {
   };
 
   render() {
-    const shouldLoad = () => {
-      if (!this.state.hasError) {
-        return (
-          <Home
-            search={this.state.search}
-            handleSearch={this.handleSearch}
-            movies={this.state.movies}
-            filteredMovies={this.state.filteredMovies}
-          />
-        );
-      }
-    };
-
     return (
       <main>
         <Route
@@ -80,7 +64,17 @@ class App extends React.Component {
           render={() => {
             return (
               <div>
-                {this.state.loading ? <Loader /> : shouldLoad()}
+                {this.state.loading ? (
+                  <Loader />
+                ) : (
+                  <Home
+                    search={this.state.search}
+                    handleSearch={this.handleSearch}
+                    movies={this.state.movies}
+                    filteredMovies={this.state.filteredMovies}
+                    hasError={this.state.hasError}
+                  />
+                )}
                 {this.state.hasError && <Error />}
               </div>
             );

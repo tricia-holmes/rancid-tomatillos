@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import Movies from "../Movies/Movies";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import Error from "../Error/Error";
+import Loader from "../Loader/Loader";
 import { Route } from "react-router-dom";
 import { loadData } from "../Util/ApiCalls";
 
@@ -58,20 +59,18 @@ class App extends React.Component {
   };
 
   render() {
-    const loading = <h2 style={{ color: "white" }}>Loading...</h2>;
-
     const displayContent = (
       <div className="bannerImages">
-        {!this.state.hasError && (
-          <nav className="navigation">
-            <input
-              type="text"
-              placeholder="Search by title or genre..."
-              onChange={(event) => this.handleSearch(event)}
-              value={this.state.search}
-            />
-          </nav>
-        )}
+        <h1 className="title">Rancid Tomatillos</h1>
+        <nav className="navigation">
+          <input
+            type="text"
+            placeholder="Search by title or genre..."
+            onChange={(event) => this.handleSearch(event)}
+            value={this.state.search}
+          />
+        </nav>
+
         <Banner movies={this.state.movies} />
         <Movies movies={this.state.filteredMovies} />
       </div>
@@ -91,11 +90,8 @@ class App extends React.Component {
           render={() => {
             return (
               <div>
-                {!this.state.hasError && (
-                  <h1 className="title">Rancid Tomatillos</h1>
-                )}
+                {this.state.loading ? <Loader /> : shouldLoad()}
                 {this.state.hasError && <Error />}
-                {this.state.loading ? loading : shouldLoad()}
               </div>
             );
           }}

@@ -26,6 +26,12 @@ body {
 .bannerImages {
   position: relative;
   width: 100vw;
+  animation: fadein 4s;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .navigation {
@@ -37,6 +43,7 @@ body {
   position: absolute;
   z-index: 2;
 }
+
 
 input {
   margin-right: 0.5%;

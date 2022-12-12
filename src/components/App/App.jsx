@@ -6,6 +6,7 @@ import MovieDetails from "../MovieDetails/MovieDetails";
 import Error from "../Error/Error";
 import { Route } from "react-router-dom";
 import { loadData } from "../Util/ApiCalls";
+import SearchBar from "../SearchBar/SearchBar";
 
 class App extends React.Component {
   constructor() {
@@ -46,7 +47,6 @@ class App extends React.Component {
       if (movie.genres) {
         movie.genres.forEach((item) => {
           if (item.toLowerCase().includes(this.state.search.toLowerCase())) {
-            console.log(movie);
             acc.push(movie);
           }
         });
@@ -75,15 +75,7 @@ class App extends React.Component {
 
     return (
       <main>
-        {!this.state.hasError && (
-          <nav className="navigation">
-            <input
-              type="text"
-              placeholder="Search by title or genre..."
-              onChange={(event) => this.handleSearch(event)}
-            />
-          </nav>
-        )}
+        {!this.state.hasError && <SearchBar handleSearch={this.handleSearch} />}
         <Route
           exact
           path="/"

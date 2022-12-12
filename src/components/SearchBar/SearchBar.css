@@ -1,0 +1,9 @@
+.navigation {
+  margin: 1%;
+  margin-left: -2%;
+  display: flex;
+  width: 100vw;
+  justify-content: flex-end;
+  position: absolute;
+  z-index: 2;
+}

@@ -7,6 +7,7 @@ import Error from "../Error/Error";
 import { Route } from "react-router-dom";
 import { loadData } from "../Util/ApiCalls";
 import SearchBar from "../SearchBar/SearchBar";
+import Home from "../Home/Home";
 
 class App extends React.Component {
   constructor() {
@@ -51,7 +52,6 @@ class App extends React.Component {
           }
         });
       }
-
       return acc.filter((item, index) => acc.indexOf(item) === index);
     }, []);
     this.setState({ filteredMovies: foundMovies });
@@ -60,16 +60,14 @@ class App extends React.Component {
   render() {
     const loading = <h2 style={{ color: "white" }}>Loading...</h2>;
 
-    const displayContent = (
-      <div className="bannerImages">
-        <Banner movies={this.state.movies} />
-        <Movies movies={this.state.filteredMovies} />
-      </div>
-    );
-
     const shouldLoad = () => {
       if (!this.state.hasError) {
-        return displayContent;
+        return (
+          <Home
+            movies={this.state.movies}
+            filteredMovies={this.state.filteredMovies}
+          />
+        );
       }
     };
 

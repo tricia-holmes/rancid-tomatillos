@@ -17,21 +17,6 @@ body {
   text-shadow: 0vw 0vw 3vw black;
 }
 
-.bannerImages {
-  position: relative;
-  width: 100vw;
-}
-
-.navigation {
-  margin: 1%;
-  margin-left: -2%;
-  display: flex;
-  width: 100vw;
-  justify-content: flex-end;
-  position: absolute;
-  z-index: 2;
-}
-
 input {
   margin-right: 0.5%;
   font-size: 1vw;

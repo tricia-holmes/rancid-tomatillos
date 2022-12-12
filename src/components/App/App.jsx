@@ -45,13 +45,14 @@ class App extends React.Component {
       }
       if (movie.genres) {
         movie.genres.forEach((item) => {
-          if (item.toLowerCase() === this.state.search.toLowerCase()) {
+          if (item.toLowerCase().includes(this.state.search.toLowerCase())) {
             console.log(movie);
             acc.push(movie);
           }
         });
       }
-      return acc;
+
+      return acc.filter((item, index) => acc.indexOf(item) === index);
     }, []);
     this.setState({ filteredMovies: foundMovies });
   };

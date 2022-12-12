@@ -1,0 +1,18 @@
+@font-face {
+  font-family: GeomatrixBold;
+  src: url('../assets/fonts/GeomatrixBold-6YBZ1.ttf');
+}
+
+.NotFound {
+  animation: fadein;
+  font-family: GeomatrixBold;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

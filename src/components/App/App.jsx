@@ -59,11 +59,12 @@ class App extends React.Component {
   };
 
   render() {
-
     const shouldLoad = () => {
       if (!this.state.hasError) {
         return (
           <Home
+            search={this.state.search}
+            handleSearch={this.handleSearch}
             movies={this.state.movies}
             filteredMovies={this.state.filteredMovies}
           />
@@ -73,12 +74,6 @@ class App extends React.Component {
 
     return (
       <main>
-        {!this.state.hasError && (
-           <div>
-           {this.state.loading ? <Loader /> : shouldLoad()}
-           {this.state.hasError && <Error />}
-         </div>
-        )}
         <Route
           exact
           path="/"

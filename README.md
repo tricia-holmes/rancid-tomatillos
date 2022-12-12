@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Rancid Tomatillos 
+### Preview
+![Rancid Tomatillos Preview](https://user-images.githubusercontent.com/22826695/207102466-92bb71f0-cea9-47dd-9fe3-5954a6a87d2f.gif)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Abstract
+Our team created a movie review site utilizing an API that presented us with with an array of movies and details. The user is able to search and filter by genre or title, and when a specific movie is clicked, the user will be presented a page with additional details regarding the movie's rating, release date, revenue, and several other details. 
 
-## Available Scripts
+This project took place during the third inning of Turing's front-end software engineering program, and required us to utilize our newly learned skills in react to create a fully functioning site from design to operation in just under 2 weeks. As a team we utilized our project management and research skills to ensure we had the time and knowledge to complete this application.
 
-In the project directory, you can run:
+### Contributors
+[Dani Bagley](https://github.com/daniabee)\
+[Tricia Holmes](https://github.com/tricia-holmes)\
+[Zac Walters](https://github.com/zacwalters4)
 
-### `npm start`
+### Research and Documentation 
+Initial design document: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![image](https://user-images.githubusercontent.com/22826695/207100116-8c493aba-83e3-452b-9d9d-349eb22fb49c.png)
+Our data model and DOM flowchart:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://user-images.githubusercontent.com/22826695/207100420-0a3a21b0-3e2b-4b58-968f-f864d6691174.png)
 
-### `npm test`
+Project board we created and managed in GitHub:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="1680" alt="image" src="https://user-images.githubusercontent.com/22826695/207100676-2f7af8cb-300e-4353-afe2-03cfd9ace45e.png">
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Technologies
+- React
+- Fetch API 
+- Cypress testing
+- Git/GitHub
+- GitHub project board 
+- CSS 
+- HTML
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Methodologies
+- Design the UI to adapt to various screen sizes
+- Error handling 
+- Implement react components which support a complex data model
+- Use object and array prototype methods to perform data manipulation
+- Create a user interface that is easy to use and clearly displays information
+- Write modular, reusable code that follows SRP (Single Responsibility Principle)
+- Make network requests to retrieve data
+- Demonstrate DRY principles 
+- Utilize Agile/Scrum project management 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Installation Instructions
+1. Fork this repository.
+2. Clone your new, forked repository to your local machine.
+3. `cd` into the project repository on your local machine and run `npm install`, then npm start to launch the application.
+4. Open the link to your local server (listed in your terminal) in your web browser to view the live page.

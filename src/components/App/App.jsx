@@ -7,6 +7,8 @@ import Error from "../Error/Error";
 import Loader from "../Loader/Loader";
 import { Route } from "react-router-dom";
 import { loadData } from "../Util/ApiCalls";
+import SearchBar from "../SearchBar/SearchBar";
+import Home from "../Home/Home";
 
 class App extends React.Component {
   constructor() {
@@ -47,43 +49,36 @@ class App extends React.Component {
       if (movie.genres) {
         movie.genres.forEach((item) => {
           if (item.toLowerCase().includes(this.state.search.toLowerCase())) {
-            console.log(movie);
             acc.push(movie);
           }
         });
       }
-
       return acc.filter((item, index) => acc.indexOf(item) === index);
     }, []);
     this.setState({ filteredMovies: foundMovies });
   };
 
   render() {
-    const displayContent = (
-      <div className="bannerImages">
-        <h1 className="title">Rancid Tomatillos</h1>
-        <nav className="navigation">
-          <input
-            type="text"
-            placeholder="Search by title or genre..."
-            onChange={(event) => this.handleSearch(event)}
-            value={this.state.search}
-          />
-        </nav>
-
-        <Banner movies={this.state.movies} />
-        <Movies movies={this.state.filteredMovies} />
-      </div>
-    );
 
     const shouldLoad = () => {
       if (!this.state.hasError) {
-        return displayContent;
+        return (
+          <Home
+            movies={this.state.movies}
+            filteredMovies={this.state.filteredMovies}
+          />
+        );
       }
     };
 
     return (
       <main>
+        {!this.state.hasError && (
+           <div>
+           {this.state.loading ? <Loader /> : shouldLoad()}
+           {this.state.hasError && <Error />}
+         </div>
+        )}
         <Route
           exact
           path="/"

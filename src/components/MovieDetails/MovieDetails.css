@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   top: 5%;
-  margin-left: 2%;
+  margin-left: 5%;
   width: 60vw;
   height: 96vh;
 }
@@ -36,9 +36,9 @@
 .movieDetails__btnContainer {
   display: flex;
   position: absolute;
-  justify-content: flex-start;
-  align-content: center;
+  justify-content: flex-end;
   width: 100%;
+  margin-left: 33vw;
   top: -3%;
   left: 2%;
 }
@@ -64,56 +64,57 @@
 }
 
 .movieDetails__header {
+  margin-top: 5%;
   display: flex;
-  /* position: relative; */
   align-items: center;
-  margin-bottom: 5vh;
 }
 
 .movieDetails__headlines {
   height: 35vh;
   width: 55vh;
-  /* width: auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
 }
 
 .movieDetails__title {
+  font-weight: 900;
   margin: 0;
-  font-size: calc(33px + 0.390625vw);
-  /* text-align: center; */
+  margin-top: -5%;
+  font-size: 3vw;
 }
 
 .movieDetails__tagline {
-  font-size: 2vw;
+  font-size: 1.3vw;
   font-style: italic;
   text-align: center;
+  margin-top: 10%;
+  margin-bottom: -10%;
+}
+
+.starImage {
+  width: 15vw;
 }
 
 .movieDetails__overview {
-  font-size: 1.5vw;
-  margin: 2%;
-  margin-bottom: 5%;
-  margin-left: 14%;
+  align-self: center;
+  font-size: 1.3vw;
+  align-self: flex-start;
+  margin-left: 5%;
 }
 
 .movieDetails__poster {
-  height: 40vh;
+  justify-self: flex-start;
+  height: 50vh;
   margin-right: 2vw;
 }
 
 .movieDetails__info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  font-size: 1.3vw;
   margin: 5%;
   margin-top: 0;
-}
-
-p {
-  margin: 1%;
+  align-self: flex-start;
 }
 
 a {

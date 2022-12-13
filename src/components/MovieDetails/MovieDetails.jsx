@@ -2,11 +2,11 @@ import React from "react";
 import "./MovieDetails.css";
 import { Link } from "react-router-dom";
 import { number, shape, string } from "prop-types";
-import oneStar from "./assets/1star.png";
-import twoStar from "./assets/2stars.png";
-import threeStar from "./assets/3stars.png";
-import fourStar from "./assets/4stars.png";
-import fiveStar from "./assets/5stars.png";
+import oneStar from "../../assets/images/1star.png";
+import twoStar from "../../assets/images/2stars.png";
+import threeStar from "../../assets/images/3stars.png";
+import fourStar from "../../assets/images/4stars.png";
+import fiveStar from "../../assets/images/5stars.png";
 
 const MovieDetails = ({ selectedMovie }) => {
   const genres = selectedMovie.genres.map((item) => {

@@ -32,4 +32,9 @@ export default function stubApi() {
     "https://rancid-tomatillos.herokuapp.com/api/v2/movies/900667",
     { fixture: "movie_details_900667.json" }
   );
+  cy.intercept(
+    "GET",
+    "https://rancid-tomatillos.herokuapp.com/api/v2/movies/566466",
+    { fixture: "movie_details_566466.json" }
+  );
 }

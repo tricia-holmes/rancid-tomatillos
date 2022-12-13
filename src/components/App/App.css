@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.title {
+  color: rgb(244, 244, 244);
+  font-size: 8vw;
+  font-weight: 900;
+  margin-top: 0.1%;
+  margin-left: 2%;
+  position: absolute;
+  z-index: 1;
+  text-shadow: 0vw 0vw 3vw black;
+}
+input {
+  margin-right: 0.5%;
+  font-size: 1vw;
+  width: 12vw;
+  height: auto;
+}
+
+button {
+  font-size: 1vw;
+}
+
+button:hover {
+  cursor: pointer;
+}

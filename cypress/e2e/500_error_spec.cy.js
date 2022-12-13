@@ -1,7 +1,10 @@
 // This test spec also exists due to .intercept() not having the ability to be overwritten by a second .intercept()
 
+import stubApi from "./test_helper"
+
 describe('500 error handling spec', () => {
   beforeEach(() => {
+    stubApi()
     cy.visit('http://localhost:3000/')
   })
 

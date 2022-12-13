@@ -1,5 +1,8 @@
+import stubApi from "./test_helper"
+
 describe('home page testing', () => {
   beforeEach(() => {
+    stubApi()
     cy.visit('http://localhost:3000/')
   })
   it('should display a title of the application', () => {

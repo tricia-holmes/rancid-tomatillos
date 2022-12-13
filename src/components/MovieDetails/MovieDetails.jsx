@@ -66,9 +66,6 @@ const MovieDetails = ({ selectedMovie }) => {
       className="movieDetails__modal"
       style={{
         backgroundImage: `url(${selectedMovie["backdrop_path"]})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        boxShadow: "inset 0 0 0 1000px rgba(0,0,0,.2)",
       }}
     >
       <div className="movieDetails__overlay">

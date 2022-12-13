@@ -3,7 +3,6 @@ import './Error.css'
 import pikachu from '../../assets/images/sad-pikachu.gif'
 
 
-
 export default function Error() {
   return (
     <div className='errorMessage'>

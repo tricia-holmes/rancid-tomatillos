@@ -25,4 +25,10 @@ describe('Individual movie page testing', () => {
       .get('button').click()
       .url().should('include', '/')
   })
+
+  it('should not have display a tag line if a movie does not have one', () => {
+    cy.get('.bannerImages').get('div')
+      .get('img[id="676701"]').click()
+    cy.get('tagline').should('not.exist')
+  })
 })

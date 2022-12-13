@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/%7Brancid-tomatillos%7D/static/css/main.ea2a6300.css",
+    "main.js": "/%7Brancid-tomatillos%7D/static/js/main.c67aa8cd.js",
+    "static/js/787.55352625.chunk.js": "/%7Brancid-tomatillos%7D/static/js/787.55352625.chunk.js",
+    "static/media/sad-pikachu.gif": "/%7Brancid-tomatillos%7D/static/media/sad-pikachu.3cab20930a1dee5ea60d.gif",
+    "static/media/GeomatrixBold-6YBZ1.ttf": "/%7Brancid-tomatillos%7D/static/media/GeomatrixBold-6YBZ1.aabd01e80bc9c162096a.ttf",
+    "index.html": "/%7Brancid-tomatillos%7D/index.html",
+    "main.ea2a6300.css.map": "/%7Brancid-tomatillos%7D/static/css/main.ea2a6300.css.map",
+    "main.c67aa8cd.js.map": "/%7Brancid-tomatillos%7D/static/js/main.c67aa8cd.js.map",
+    "787.55352625.chunk.js.map": "/%7Brancid-tomatillos%7D/static/js/787.55352625.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea2a6300.css",
+    "static/js/main.c67aa8cd.js"
+  ]
+}

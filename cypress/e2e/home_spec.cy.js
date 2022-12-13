@@ -44,7 +44,7 @@ describe('home page testing', () => {
   it('should be able to search a genre', () => {
     cy.get('.navigation')
       .find('input')
-        .type('anime')
+        .type('animation')
     cy.get('.bannerImages')
       .find('img[id="566466"]')
         .should('have.class', 'movieThumbnail')

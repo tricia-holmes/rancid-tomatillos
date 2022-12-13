@@ -3,9 +3,10 @@ import React from "react";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import Error from "../Error/Error";
 import Loader from "../Loader/Loader";
-import { Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { loadData } from "../Util/ApiCalls";
 import Home from "../Home/Home";
+import NotFound from "../NotFound/NotFound";
 
 class App extends React.Component {
   constructor() {
@@ -58,38 +59,46 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <Route
-          exact
-          path="/"
-          render={() => {
-            return (
-              <div>
-                {this.state.loading ? (
-                  <Loader />
-                ) : (
-                  <Home
-                    search={this.state.search}
-                    handleSearch={this.handleSearch}
-                    movies={this.state.movies}
-                    filteredMovies={this.state.filteredMovies}
-                    hasError={this.state.hasError}
-                  />
-                )}
-                {this.state.hasError && <Error />}
-              </div>
-            );
-          }}
-        />
-        <Route
-          exact
-          path="/:id"
-          render={({ match }) => {
-            const foundMovie = this.state.moviesWithDetails.find(
-              (item) => `${item.id}` === match.params.id
-            );
-            return <MovieDetails selectedMovie={foundMovie} />;
-          }}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return (
+                <div>
+                  {this.state.loading ? (
+                    <Loader />
+                  ) : (
+                    <Home
+                      search={this.state.search}
+                      handleSearch={this.handleSearch}
+                      movies={this.state.movies}
+                      filteredMovies={this.state.filteredMovies}
+                      hasError={this.state.hasError}
+                    />
+                  )}
+                  {this.state.hasError && <Error />}
+                </div>
+              );
+            }}
+          />
+          <Route exact path="/not-found" component={NotFound} />
+          <Route
+            exact
+            path="/:id"
+            render={({ match }) => {
+              const foundMovie = this.state.moviesWithDetails.find(
+                (item) => `${item.id}` === match.params.id
+              );
+              if (foundMovie) {
+                return <MovieDetails selectedMovie={foundMovie} />;
+              } else {
+                return <Redirect to="/not-found" />;
+              }
+            }}
+          />
+          <Route path="*" component={NotFound} />
+        </Switch>
       </main>
     );
   }

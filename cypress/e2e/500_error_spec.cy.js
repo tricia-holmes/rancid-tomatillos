@@ -1,4 +1,4 @@
-// This test spec exists due to .intercept() not having the ability to be overwritten by a second .intercept()
+// This test spec also exists due to .intercept() not having the ability to be overwritten by a second .intercept()
 
 describe('500 error handling spec', () => {
   beforeEach(() => {

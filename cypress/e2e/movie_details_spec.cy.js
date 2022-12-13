@@ -1,7 +1,7 @@
 describe('Individual movie page testing', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movie_data.json' })
+    // cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movie_data.json' })
   })
   it('should route to the movie id url when clicked', () => {
     cy.get('.bannerImages').get('div')

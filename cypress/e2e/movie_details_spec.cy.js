@@ -26,7 +26,6 @@ describe("Individual movie page testing", () => {
       .get("img")
       .should("have.attr", "alt");
   });
-
   it("should route back to the home page when back is clicked", () => {
     cy.get(".bannerImages")
       .get("div")
@@ -40,3 +39,4 @@ describe("Individual movie page testing", () => {
       .should("include", "/");
   });
 });
+

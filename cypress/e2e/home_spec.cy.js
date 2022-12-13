@@ -58,4 +58,13 @@ describe('home page testing', () => {
       .find('img[id="505642"]')
         .should('not.exist')
   })
+
+  it('should display no results if a search matches no criteria', () => {
+    cy.get('.navigation')
+      .find('input')
+        .type('bonk')
+    cy.get('.bannerImages')
+      .find('.movieThumbnail')
+      .should('not.exist')
+  })
 })

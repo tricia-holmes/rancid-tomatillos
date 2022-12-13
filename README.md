@@ -1,6 +1,7 @@
 # Rancid Tomatillos 
 ### Preview
-![Rancid Tomatillos Preview](https://user-images.githubusercontent.com/22826695/207102466-92bb71f0-cea9-47dd-9fe3-5954a6a87d2f.gif)
+
+https://user-images.githubusercontent.com/108088961/207217085-6e96f6ad-95a6-44fd-a599-53b4c1bb7bc1.mov
 
 ### Abstract
 Our team created a movie review site utilizing an API that presented us with with an array of movies and details. The user is able to search and filter by genre or title, and when a specific movie is clicked, the user will be presented a page with additional details regarding the movie's rating, release date, revenue, and several other details. 

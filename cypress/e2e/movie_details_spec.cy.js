@@ -2,7 +2,7 @@ describe('Individual movie page testing', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
   })
-  it.skip('should route to the movie id url when clicked', () => {
+  it('should route to the movie id url when clicked', () => {
     cy.get('.bannerImages').get('div')
       .get('img[id="830784"]').click()
       .url().should('include', '/830784')

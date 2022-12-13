@@ -2,18 +2,18 @@ describe('home page testing', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
   })
-  it.skip('should display a title of the application', () => {
+  it('should display a title of the application', () => {
     cy.contains('Rancid Tomatillos')
   })
 
-  it.skip('should display a banner image.', () => {
+  it('should display a banner image.', () => {
     cy.get('.bannerImages')
       .find('img')
         .should('have.class', 'banner')
         .should('have.attr', 'src')
   })
 
-  it.skip('should display a collection of movies.', () => {
+  it('should display a collection of movies.', () => {
     cy.get('.bannerImages').get('div')
       .find('img[id="505642"]')
         .should('have.class', 'movieThumbnail')
@@ -28,7 +28,7 @@ describe('home page testing', () => {
         .should('have.attr', 'src', "https://image.tmdb.org/t/p/original//4H7dRko04LGUaDLHiVwSh4gv61S.jpg")
   })
 
-  it.skip('should be able to search a title', () => {
+  it('should be able to search a title', () => {
     cy.get('.navigation')
       .find('input')
         .type('black panther')

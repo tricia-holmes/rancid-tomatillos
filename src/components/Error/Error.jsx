@@ -1,6 +1,6 @@
 import React from "react";
 import './Error.css'
-import pikachu from './sad-pikachu.gif'
+import pikachu from '../../assets/images/sad-pikachu.gif'
 
 
 export default function Error() {

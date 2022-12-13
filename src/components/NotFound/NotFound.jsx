@@ -5,10 +5,10 @@ import "./NotFound.css";
 export default function NotFound() {
   return (
     <div className="NotFound">
-      <h1>404</h1>
-      <h2>Oops, we couldn't find this page</h2>
+      <h1 className="NotFound__title">404</h1>
+      <h2 className="NotFound__text">Oops, we couldn't find this page!</h2>
       <Link to="/">
-        <button>Return to home page</button>
+        <button className="NotFound__btn">Return to home page</button>
       </Link>
     </div>
   );

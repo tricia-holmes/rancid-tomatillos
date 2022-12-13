@@ -60,7 +60,7 @@
 }
 
 .movieDetails__btn:hover {
-  color: white;
+  text-decoration: underline;
 }
 
 .movieDetails__header {

@@ -82,6 +82,11 @@ class App extends React.Component {
               );
             }}
           />
+          <Route
+            exact
+            path="/rancid-tomatillos"
+            render={() => <Redirect to="/" />}
+          />
           <Route exact path="/not-found" component={NotFound} />
           <Route
             exact

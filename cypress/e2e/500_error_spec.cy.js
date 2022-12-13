@@ -15,7 +15,7 @@ describe('500 error handling spec', () => {
     cy.get('.errorMessage')
       .contains('Oh no! Something went wrong. Please try later!')
       .get('img')
-        .should('have.attr', 'src', '/static/media/sad-pikachu.3cab20930a1dee5ea60d.gif')
+        .should('have.attr', 'src', '/rancid-tomatillos/static/media/sad-pikachu.3cab20930a1dee5ea60d.gif')
   })
 
 })

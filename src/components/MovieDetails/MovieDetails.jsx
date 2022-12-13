@@ -9,8 +9,13 @@ import fourStar from "../../assets/images/4stars.png";
 import fiveStar from "../../assets/images/5stars.png";
 
 const MovieDetails = ({ selectedMovie }) => {
-  const genres = selectedMovie.genres.map((item) => {
-    return `${item}, `;
+  const title = selectedMovie.title.toUpperCase();
+  const genres = selectedMovie.genres.join(" / ");
+  const tagline = !selectedMovie.tagline ? null : `"${selectedMovie.tagline}"`;
+  const revenue = selectedMovie.revenue.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
   });
 
   let stars;
@@ -80,19 +85,15 @@ const MovieDetails = ({ selectedMovie }) => {
               alt=""
             />
             <div className="movieDetails__headlines">
-              <h1 className="movieDetails__title">
-                {selectedMovie.title.toUpperCase()}
-              </h1>
-              <h2 className="movieDetails__tagline">
-                {!selectedMovie.tagline ? null : `"${selectedMovie.tagline}"`}
-              </h2>
+              <h1 className="movieDetails__title">{title}</h1>
+              <h2 className="movieDetails__tagline">{tagline}</h2>
               {stars}
             </div>
           </div>
           <h3 className="movieDetails__overview">{selectedMovie.overview}</h3>
           <div className="movieDetails__info">
             <p>- Release Date: {selectedMovie["release_date"]}</p>
-            <p>- Revenue: {`$${selectedMovie.revenue}`}</p>
+            <p>- Revenue: {revenue}</p>
             <p>- Genres: {genres}</p>
           </div>
         </div>

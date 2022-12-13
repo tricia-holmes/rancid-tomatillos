@@ -1,9 +1,8 @@
-import stubApi from './test_helper'
+import stubApi from "./test_helper";
 
 describe("Individual movie page testing", () => {
-
   beforeEach(() => {
-    stubApi()
+    stubApi();
     cy.visit("http://localhost:3000/");
   });
 
@@ -25,6 +24,9 @@ describe("Individual movie page testing", () => {
       )
       .get("img")
       .should("have.attr", "alt");
+    cy.contains("Release Date:");
+    cy.contains("Revenue:");
+    cy.contains("Genres:");
   });
   it("should route back to the home page when back is clicked", () => {
     cy.get(".bannerImages")
@@ -38,5 +40,10 @@ describe("Individual movie page testing", () => {
       .url()
       .should("include", "/");
   });
+  it("should not show details if they do not exist in the data", () => {
+    cy.get(".bannerImages").get("div").get('img[id="820067"]').click();
+    cy.contains("THE QUINTESSENTIAL QUINTUPLETS MOVIE")
+      .get(".movieDetails__tagline")
+      .should("not.be.visible");
+  });
 });
-

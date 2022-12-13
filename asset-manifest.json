@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/%7Brancid-tomatillos%7D/static/css/main.ea2a6300.css",
-    "main.js": "/%7Brancid-tomatillos%7D/static/js/main.c67aa8cd.js",
-    "static/js/787.55352625.chunk.js": "/%7Brancid-tomatillos%7D/static/js/787.55352625.chunk.js",
-    "static/media/sad-pikachu.gif": "/%7Brancid-tomatillos%7D/static/media/sad-pikachu.3cab20930a1dee5ea60d.gif",
-    "static/media/GeomatrixBold-6YBZ1.ttf": "/%7Brancid-tomatillos%7D/static/media/GeomatrixBold-6YBZ1.aabd01e80bc9c162096a.ttf",
-    "index.html": "/%7Brancid-tomatillos%7D/index.html",
-    "main.ea2a6300.css.map": "/%7Brancid-tomatillos%7D/static/css/main.ea2a6300.css.map",
-    "main.c67aa8cd.js.map": "/%7Brancid-tomatillos%7D/static/js/main.c67aa8cd.js.map",
-    "787.55352625.chunk.js.map": "/%7Brancid-tomatillos%7D/static/js/787.55352625.chunk.js.map"
+    "main.css": "/rancid-tomatillos/static/css/main.e55ffa4b.css",
+    "main.js": "/rancid-tomatillos/static/js/main.fbe64a7e.js",
+    "static/js/787.55352625.chunk.js": "/rancid-tomatillos/static/js/787.55352625.chunk.js",
+    "static/media/sad-pikachu.gif": "/rancid-tomatillos/static/media/sad-pikachu.3cab20930a1dee5ea60d.gif",
+    "static/media/GeomatrixBold-6YBZ1.ttf": "/rancid-tomatillos/static/media/GeomatrixBold-6YBZ1.aabd01e80bc9c162096a.ttf",
+    "index.html": "/rancid-tomatillos/index.html",
+    "main.e55ffa4b.css.map": "/rancid-tomatillos/static/css/main.e55ffa4b.css.map",
+    "main.fbe64a7e.js.map": "/rancid-tomatillos/static/js/main.fbe64a7e.js.map",
+    "787.55352625.chunk.js.map": "/rancid-tomatillos/static/js/787.55352625.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea2a6300.css",
-    "static/js/main.c67aa8cd.js"
+    "static/css/main.e55ffa4b.css",
+    "static/js/main.fbe64a7e.js"
   ]
 }
